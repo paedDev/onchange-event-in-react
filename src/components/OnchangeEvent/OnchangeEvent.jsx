@@ -4,7 +4,7 @@ import styles from "./OnchangeEvent.module.css"
 
 function OnchangeEvent () {
 
-    const [name,setName] = useState("Guest")
+    const [name,setName] = useState("Guest ")
     const [quantity, setQuantity] = useState(1)
     const [comment,setComment] = useState("")
     const [payment, setPayment] = useState("")
@@ -32,28 +32,10 @@ function OnchangeEvent () {
     }
     return(
         <>
-            <div>
-                <select value={socialmed} onChange={handleSocialMedChange}>
+            <div className={styles.container}>
+              
 
-                    <option value="">Select your Social media</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="Instagram">Instagram</option>
-                    <option value="Twitter">Twitter</option>
-                    <option value="Tiktok">Tiktok</option>
-
-
-                </select>
-                <br />
-                <br />
-                <br />
-
-
-
-
-
-
-
-                <input value={name} onChange={handleNameChange} />
+                <input value={name} onChange={handleNameChange} className={styles.name} />
                 <p>Name: {name}</p>
 
                 <input value={quantity} onChange={handleQuantityChange} type="number"/>
@@ -81,6 +63,18 @@ function OnchangeEvent () {
                     Delivery
                 </label>
                 <p>Mode of Shipping: {shipping}</p>
+
+
+                <select value={socialmed} onChange={handleSocialMedChange}>
+
+                <option value="">Select your Social media</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Tiktok">Tiktok</option>
+
+
+</select>
             </div>
         </>
     )
