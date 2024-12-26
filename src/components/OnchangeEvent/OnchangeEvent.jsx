@@ -10,6 +10,11 @@ function OnchangeEvent () {
     const [payment, setPayment] = useState("")
     const [shipping, setShipping] = useState("")
 
+    const [socialmed, setSocialmed] = useState("")
+
+    const handleSocialMedChange = (event) =>{
+        setSocialmed(event.target.value)
+    }
     const handleShippingChange = (event) =>{
         setShipping(event.target.value)
     }
@@ -28,7 +33,26 @@ function OnchangeEvent () {
     return(
         <>
             <div>
-        
+                <select value={socialmed} onChange={handleSocialMedChange}>
+
+                    <option value="">Select your Social media</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="Tiktok">Tiktok</option>
+
+
+                </select>
+                <br />
+                <br />
+                <br />
+
+
+
+
+
+
+
                 <input value={name} onChange={handleNameChange} />
                 <p>Name: {name}</p>
 
