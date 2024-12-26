@@ -34,17 +34,16 @@ function OnchangeEvent () {
         <>
             <div className={styles.container}>
               
-
-                <input value={name} onChange={handleNameChange} className={styles.name} />
                 <p>Name: {name}</p>
-
-                <input value={quantity} onChange={handleQuantityChange} type="number"/>
+                <input value={name} onChange={handleNameChange} className={styles.name} />
+         
                 <p>Quantity : {quantity}</p>
+                <input value={quantity} onChange={handleQuantityChange} type="number" className={styles.quantity}/>
+                
 
-                 <textarea value ={comment} onChange={handleCommentChange} name="" placeholder="Place your suggestions here"/>
-                <p>Comment: {comment}</p>
+                
 
-                <select value={payment} onChange={handlePaymentChange}>
+                <select value={payment} onChange={handlePaymentChange} className={styles.payment}>
                     <option value="">Select an option</option>
                     <option value="Visa">Visa</option>
                     <option value="MasterCard">MasterCard</option>
@@ -52,20 +51,23 @@ function OnchangeEvent () {
 
                 </select>
                 <p>Payment: {payment}</p>
-
-                <label>
-                    <input type="radio" value="Pick up" checked ={shipping === "Pick up"} onChange={handleShippingChange}/>
-                    Pick up
-                </label>
                 <br />
-                <label>
-                    <input type="radio" value="Delivery" checked ={shipping === "Delivery"} onChange={handleShippingChange}/>
-                    Delivery
-                </label>
-                <p>Mode of Shipping: {shipping}</p>
+                <div className={styles.radioBtn}>
+                    <label>
+                        <input type="radio" value="Pick up" checked ={shipping === "Pick up"} onChange={handleShippingChange}/>
+                        Pick up
+                    </label>
+                    <br />
+                    <label>
+                        <input type="radio" value="Delivery" checked ={shipping === "Delivery"} onChange={handleShippingChange}/>
+                        Delivery
+                    </label>
+                    
+                </div>
+                <p className={styles.mode}>Mode of Shipping: {shipping}</p>
 
 
-                <select value={socialmed} onChange={handleSocialMedChange}>
+                <select value={socialmed} onChange={handleSocialMedChange} className={styles.socialmed}>
 
                 <option value="">Select your Social media</option>
                 <option value="Facebook">Facebook</option>
@@ -74,7 +76,11 @@ function OnchangeEvent () {
                 <option value="Tiktok">Tiktok</option>
 
 
-</select>
+                </select>
+                <p>Social Media : {socialmed}</p>
+
+                <textarea value ={comment} onChange={handleCommentChange} name="" placeholder="Place your suggestions here" className={styles.textarea}/>
+                <p>Comment: {comment}</p>
             </div>
         </>
     )
